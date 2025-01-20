@@ -31,3 +31,23 @@
 .nav_legordulo h2{
   display: none;
 }
+
+
+.bejelentkezes{
+  width: 470px;
+  height: 500px;
+  margin: auto;
+  background-color: #FDDAF0;
+}
+
+.bejelentkezes button{
+  width: 270px;
+  height: 70px;
+  border-radius: 10px;
+
+}
+
+.bejelentkezes input{
+  width: 370px;
+  height: 50px;
+}

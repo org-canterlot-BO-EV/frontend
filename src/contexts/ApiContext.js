@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react";
-import { myAxios } from "./MyAxios";
+import { myAxios } from "../api/MyAxios";
 
 export const ApiContext = createContext("");
 

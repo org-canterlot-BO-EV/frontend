@@ -1,10 +1,10 @@
 import './App.css';
-import Navigacio from './components/felhasznalo/Navigacio';
+import Bejelentkezes from './components/felhasznalo/Bejelentkezes';
 
 function App() {
   return (
     <div className="App">
-      <Navigacio/>
+      <Bejelentkezes/>
     </div>
   );
 }
