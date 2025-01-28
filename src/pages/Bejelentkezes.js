@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import useAuthContext from "../../contexts/AuthContext";
+import useAuthContext from "../contexts/AuthContext";
 
 
 export default function Bejelentkezes() {
   const [email, setEmail] = useState("");
-  const [jelszo, setJelszo] = useState("");
+  const [password, setPassword] = useState("");
 
   const navigate = useNavigate();
   const { loginReg, errors } = useAuthContext();
@@ -14,7 +14,7 @@ export default function Bejelentkezes() {
     e.preventDefault();
     const adat = {
       email: email,
-      jelszo: jelszo,
+      password: password,
     };
     console.log(adat);
 
@@ -43,18 +43,18 @@ export default function Bejelentkezes() {
         </div>
         <div>
           {errors.email && (
-            <span className="text-danger">{errors.email[0]}</span>
+            <span>{errors.email[0]}</span>
           )}
         </div>
-        <div className="mb-3">
-          <label htmlFor="pwd" className="form-label">
+        <div>
+          <label htmlFor="pwd">
             <p>Jelszó</p>
           </label>
           <input
             type="password"
-            value={jelszo}
+            value={password}
             onChange={(e) => {
-              setJelszo(e.target.value);
+              setPassword(e.target.value);
             }}
             className="form-control"
             id="pwd"
@@ -63,18 +63,18 @@ export default function Bejelentkezes() {
           />
           <div>
             {errors.jelszo && (
-              <span className="text-danger">{errors.jelszo[0]}</span>
+              <span>{errors.password[0]}</span>
             )}
           </div>
         </div>
 
-        <div className=" text-center">
-          <button type="submit" className="btn btn-primary w-100">
+        <div>
+          <button type="submit">
             Bejelentkezés
           </button>
 
           <p>
-            <Link className="nav-link text-info" to="/regisztracio">
+            <Link to="/regisztracio">
               Regisztráció
             </Link>
           </p>
