@@ -5,7 +5,7 @@ import useAuthContext from "../../contexts/AuthContext";
 
 export default function Bejelentkezes() {
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [jelszo, setJelszo] = useState("");
 
   const navigate = useNavigate();
   const { loginReg, errors } = useAuthContext();
@@ -14,7 +14,7 @@ export default function Bejelentkezes() {
     e.preventDefault();
     const adat = {
       email: email,
-      password: password,
+      jelszo: jelszo,
     };
     console.log(adat);
 
@@ -30,7 +30,7 @@ export default function Bejelentkezes() {
             <p>Email</p>
           </label>
           <input
-            type="email"
+            type="emails"
             value={email}
             onChange={(e) => {
               setEmail(e.target.value);
@@ -52,9 +52,9 @@ export default function Bejelentkezes() {
           </label>
           <input
             type="password"
-            value={password}
+            value={jelszo}
             onChange={(e) => {
-              setPassword(e.target.value);
+              setJelszo(e.target.value);
             }}
             className="form-control"
             id="pwd"
@@ -62,8 +62,8 @@ export default function Bejelentkezes() {
             name="pwd"
           />
           <div>
-            {errors.password && (
-              <span className="text-danger">{errors.password[0]}</span>
+            {errors.jelszo && (
+              <span className="text-danger">{errors.jelszo[0]}</span>
             )}
           </div>
         </div>
