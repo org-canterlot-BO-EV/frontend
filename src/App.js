@@ -4,23 +4,41 @@ import Bejelentkezes from "./pages/Bejelentkezes";
 import Regisztracio from "./pages/Regisztracio";
 import './App.css';
 import VendegLayout from "./pages/VendegLayout";
+import AdminAlap from "./components/admin/AdminAlap";
+import useAuthContext from "./contexts/AuthContext";
 
 function App() {
+    const { user } = useAuthContext();
     return (
+      <>
         <Routes>
-            <Route path="/" element={<VendegLayout />}>
+          {
+            !user && (
+              <Route path="/" element={<VendegLayout />}>
                 <Route index element={<Kezdolap/>}/>
                 <Route path="bejelentkezes" element={<Bejelentkezes />} />
                 <Route path="regisztracio" element={<Regisztracio />} />
 
+
+                        
             </Route>
+          )}
+
+          {user&&(
+            <Route path="/" 
+            element={
+              user.jogosultsag_tipus === "adm" ? (
+                <AdminAlap />
+              ) : (
+                <Kezdolap />
+              )
+            }
+            >
+              </Route>
+          )}
         </Routes>
-    );
-  return (
-    <div className="App">
       </>
-    </div>
-  );
+    );  
 }
 
 export default App;

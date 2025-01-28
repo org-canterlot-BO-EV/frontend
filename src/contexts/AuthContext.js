@@ -37,7 +37,7 @@ export const AuthProvider = ({ children }) => {
       await myAxios.post(vegpont, adat);
       console.log("siker");
       getUser()
-      
+      navigate("/");
       
     } catch (error) {
       console.log(error);
