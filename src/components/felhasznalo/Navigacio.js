@@ -1,6 +1,7 @@
 import React from 'react'
 import NavProgramok from './NavProgramok'
 import useApiContext from '../../contexts/ApiContext'
+import { Link } from 'react-router-dom';
 
 function Navigacio() {
     const { programTipusok } = useApiContext();
@@ -9,12 +10,12 @@ function Navigacio() {
     <div className="navigacio">
       <div>
         <img src="https://chromestylehungary.com/img/96684/tex_lil/tex_lil.jpg" alt="logo" />
-        <h1>Canterlot</h1>
+        <h1><Link to="/">Canterlot</Link></h1>
       </div>
       <div className="nav_menu">
-        <h1>Hírek</h1>
+        <h1><a href="">Hírek</a></h1>
         <h1>Programok</h1>
-        <h1>Profilom</h1>
+        <h1><Link to="/bejelentkezes">Profilom</Link></h1>
         <div className="nav_legordulo">
             {programTipusok.map((program) => {
             return <NavProgramok program={program.elnevezes} key={program.programtipus_id} />;
