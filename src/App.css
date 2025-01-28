@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Jacques+Francois&display=swap');
+
 @import url('https://fonts.googleapis.com/css2?family=Varta:wght@300..700&display=swap');
 
 /*NAVIGÁCIÓ*/
@@ -72,3 +74,146 @@
 .bejelentkezes input::placeholder{ color: #87414D; }
 
 .bejelentkezes input:focus{ border: 0px; }
+
+/*Borsószemhercegkisasszony territóriuma*/
+.programFelvitel{
+  padding: 20px;
+  background-color: #FFECF6;
+}
+
+.programFelvitel h2{
+  text-align: left;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.programFelvitel .felvitelSor{ 
+  margin: 10px 5px;
+}
+
+.programFelvitel form{
+  display: flex;
+  flex-direction: column;
+}
+
+.programFelvitel button{
+  padding: 12px;
+  border: 0px;
+  border-radius: 16px;
+  margin: 20px;
+  color: white;
+  max-width: 250px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.elkuldGomb{
+  float: right;
+  background-color: #87414D;
+  width: 240px;
+}
+
+.megsemGomb{
+  float: right;
+  background-color: #DDBAC0;
+  width: 240px;
+}
+
+
+.programFelvitel label{
+  margin-bottom: 8px;
+  font-weight: bold;
+  display: block;
+  width: 100%;
+  text-align: left;
+  margin-left: 25px;
+}
+
+.felvitelSor input, textarea{
+  padding: 10px;
+  border:1px solid #100101;
+  border-radius: 10px;
+  margin-left: 30px;
+  width: 100%;
+}
+
+.felvitelSor select {
+  padding: 10px;
+  border:1px solid #100101;
+  border-radius: 10px;
+  margin-left: 30px;
+}
+
+.felvitelSor{
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.datum {
+  max-width: 400px;
+}
+
+.felvitelSorAlso{
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+.adminMenu{
+  position: sticky;
+  height: 100%;
+  width: 250px;
+  padding-top: 20px;
+}
+
+.adminMenu a{
+  color: black;
+  text-decoration: none;
+}
+
+.adminMenu div{
+  padding: 5px;
+  margin-left: 15px;
+  margin-right: 5px;
+  text-align: left;
+  border-bottom: 1px solid grey;
+  color: black;
+}
+
+.adminMenu div:hover{
+  background-color: #FFECF6;
+}
+
+.adminFelulet{
+  display: grid;
+  grid-template-columns: 1fr 10fr 1fr;
+  width: 90%;
+  margin: auto;
+}
+
+.adminMenu h4{
+  margin: 0;
+  margin-right: 10px;
+}
+
+.adminTarolo .navigacio{
+  background-color: #DDBAC0;
+  color: #100101;
+  font-family: 'Jacques Francois';
+}
+
+.adminTarolo .navigacio h1{
+  margin-top: 17px;
+  text-transform: uppercase;
+}
+
+.jobbra{
+  position: fixed;
+  right: 0;
+  padding-left: 20px;
+  border-left: 1px solid #FDDAF0;
+}
+
+.gombok{
+  display: inline;
+}

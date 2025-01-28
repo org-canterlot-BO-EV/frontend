@@ -16,11 +16,11 @@ export const ApiProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    getAdat("/programtipusok", setProgramTipusok);
+    getAdat("api/programtipusok", setProgramTipusok);
   }, []);
 
   return (
-    <ApiContext.Provider value={{ programTipusok}}>
+    <ApiContext.Provider value={{ programTipusok }}>
       {children}
     </ApiContext.Provider>
   );
