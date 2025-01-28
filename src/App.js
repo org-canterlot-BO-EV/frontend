@@ -1,10 +1,11 @@
 import './App.css';
-import Bejelentkezes from './components/felhasznalo/Bejelentkezes';
+import AdminAlap from './components/admin/AdminAlap';
+
 
 function App() {
   return (
     <div className="App">
-      <Bejelentkezes/>
+      <AdminAlap/>
     </div>
   );
 }
