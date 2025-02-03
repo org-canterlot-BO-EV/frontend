@@ -1,20 +1,27 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function AdminNav() {
   return (
     <div className="adminMenu">
       <h4 id="nev">Bejelentkezett Admin Neve</h4>
       <div>
-        <a href="#">Tartalom hozzáadása</a>
+        <Link to="/felvitel">Esemény vagy cikk hozzáadása</Link>
       </div>
       <div>
-        <a href="#">Fiókok kezelése</a>
+        <Link to="/fiokok-kezelese">Fiókok kezelése</Link>
       </div>
       <div>
-        <a href="#">Kommentek kezelése</a>
+        <Link to="/kommentek-kezelese">Kommentek kezelése</Link>
       </div>
       <div>
-        <a href="#">Programok szerkesztése és eltávolítása</a>
+        <Link to="/programok-szerkesztese">Programok szerkesztése és eltávolítása</Link>
+      </div>
+      <div>
+        <Link to="/statisztika">Statisztikák...</Link>
+      </div>
+      <div>
+        <Link to="/taxonomia">Taxonómia</Link>
       </div>
     </div>
   );

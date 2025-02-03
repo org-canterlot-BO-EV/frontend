@@ -11,32 +11,7 @@ function App() {
     const { user } = useAuthContext();
     return (
       <>
-        <Routes>
-          {
-            !user && (
-              <Route path="/" element={<VendegLayout />}>
-                <Route index element={<Kezdolap/>}/>
-                <Route path="bejelentkezes" element={<Bejelentkezes />} />
-                <Route path="regisztracio" element={<Regisztracio />} />
-
-
-                        
-            </Route>
-          )}
-
-          {user&&(
-            <Route path="/" 
-            element={
-              user.jogosultsag_tipus === "adm" ? (
-                <AdminAlap />
-              ) : (
-                <Kezdolap />
-              )
-            }
-            >
-              </Route>
-          )}
-        </Routes>
+        <AdminAlap />
       </>
     );  
 }
