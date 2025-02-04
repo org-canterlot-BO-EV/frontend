@@ -1,17 +1,12 @@
 import React, { useState, useEffect } from "react";
+import ProgramokSorok from "./ProgramokSorok";
+import useApiContext from "../../contexts/ApiContext";
 
 const ProgramLista = () => {
-  const [programok, setProgramok] = useState([]);
+  const {programok} = useApiContext();
+  const [sortProgramok, setSortProgramok] = useState(programok);
   const [sortOption, setSortOption] = useState("none");
-
-  const handleDelete = (index) => {
-    //KELL
-  };
-
-  const handleEdit = (program) => {
-    //KELL
-  };
-
+  
   const handleSortChange = (event) => {
     const sortOption = event.target.value;
     setSortOption(sortOption);
@@ -38,7 +33,7 @@ const ProgramLista = () => {
         break;
     }
 
-    setProgramok(sortedPrograms);
+    setSortProgramok(sortedPrograms);
   };
 
   return (
@@ -57,7 +52,6 @@ const ProgramLista = () => {
         <thead>
           <tr>
             <th>Program Név</th>
-            <th>Leírás</th>
             <th>Ár</th>
             <th>Dátum</th>
             <th>Foglalás Kezdete</th>
@@ -66,30 +60,11 @@ const ProgramLista = () => {
           </tr>
         </thead>
         <tbody>
-          {programok.length > 0 ? (
-            programok.map((program, index) => (
-              <tr key={program.program_id}>
-                <td>{program.program_nev}</td>
-                <td>{program.program_leiras}</td>
-                <td>{program.program_ar}</td>
-                <td>{program.program_datum}</td>
-                <td>{program.foglalas_kezdete}</td>
-                <td>{program.foglalas_vege}</td>
-                <td>
-                  <button className="editBtn" onClick={() => handleEdit(program)}>
-                    ✏️
-                  </button>
-                  <button className="deleteBtn" onClick={() => handleDelete(index)}>
-                    🗑️
-                  </button>
-                </td>
-              </tr>
-            ))
-          ) : (
-            <tr>
-              <td colSpan="7">Nincsenek elérhető programok</td>
-            </tr>
-          )}
+        {
+             sortProgramok.map((elem, index) => {
+              return <ProgramokSorok elem={elem} key={index} index={index}/>
+             })
+          }
         </tbody>
       </table>
     </div>

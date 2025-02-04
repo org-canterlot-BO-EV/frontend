@@ -1,20 +1,19 @@
 import React, { useState, useEffect } from 'react';
+import FelhasznaloSorok from './FelhasznaloSorok';
+import useApiContext from '../../contexts/ApiContext.js';
 
 const FelhasznalokLista = () => {
-  const [felhasznalok, setFelhasznalok] = useState([]);
+  const {felhasznalok} = useApiContext();      
   const [searchTerm, setSearchTerm] = useState("");
 
-  const filteredFelhasznalok = felhasznalok.filter((felhasznalo) =>
-    felhasznalo.felhasznalo_nev.toLowerCase().includes(searchTerm.toLowerCase())
+  const filteredFelhasznalok = felhasznalok.filter((elem) =>
+    elem.felhasznalo_nev.toLowerCase().includes(searchTerm.toLowerCase())
   );
-
-  const handleDelete = (index) => {
-    //KELL
-  };
 
   return (
     <div className="felhasznalokLista">
       <h2>Felhasználók listája</h2>
+
       <input
       className='felhasznaloKereso'
         type="text"
@@ -37,31 +36,11 @@ const FelhasznalokLista = () => {
           </tr>
         </thead>
         <tbody>
-          {filteredFelhasznalok.length > 0 ? (
-            filteredFelhasznalok.map((felhasznalo, index) => (
-              <tr key={index}>
-                <td>{felhasznalo.felhasznalo_nev}</td>
-                <td>{felhasznalo.vezetek_nev}</td>
-                <td>{felhasznalo.kereszt_nev}</td>
-                <td>{felhasznalo.szul_datum}</td>
-                <td>{felhasznalo.telefon}</td>
-                <td>{felhasznalo.email}</td>
-                <td>{felhasznalo.jogosultsag_tipus}</td>
-                <td>
-                  <button 
-                    className="deleteBtn" 
-                    onClick={() => handleDelete(index)}
-                  >
-                    🗑️ Törlés
-                  </button>
-                </td>
-              </tr>
-            ))
-          ) : (
-            <tr>
-              <td colSpan="8">Nincsenek találatok</td>
-            </tr>
-          )}
+          {
+             filteredFelhasznalok.map((elem, index) => {
+              return <FelhasznaloSorok elem={elem} key={index} index={index}/>
+             })
+          }
         </tbody>
       </table>
     </div>
