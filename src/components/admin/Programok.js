@@ -56,6 +56,7 @@ const ProgramLista = () => {
             <th>Dátum</th>
             <th>Foglalás Kezdete</th>
             <th>Foglalás Vége</th>
+            <th>Lefoglalt(db)</th>
             <th>Műveletek</th>
           </tr>
         </thead>

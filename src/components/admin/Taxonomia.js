@@ -1,17 +1,14 @@
 import React, { useState, useEffect } from 'react';
+import TaxonomiaSorok from './TaxonomiaSorok';
+import useApiContext from '../../contexts/ApiContext';
 
 const Taxonomia = () => {
-  const [taxonomias, setTaxonomias] = useState([]);
+  const {taxonomiak} = useApiContext();
   const [searchTerm, setSearchTerm] = useState("");
 
-  const filteredTaxonomias = taxonomias.filter((taxonomia) =>
+  const filteredTaxonomias = taxonomiak.filter((taxonomia) =>
     taxonomia.elnevezes.toLowerCase().includes(searchTerm.toLowerCase())
   );
-
-  const handleDelete = (index) => {
-    const updatedTaxonomias = taxonomias.filter((_, i) => i !== index);
-    setTaxonomias(updatedTaxonomias);
-  };
   
   return (
     <div className="taxonomiaLista">
@@ -33,26 +30,11 @@ const Taxonomia = () => {
           </tr>
         </thead>
         <tbody>
-          {filteredTaxonomias.length > 0 ? (
-            filteredTaxonomias.map((taxonomia, index) => (
-              <tr key={taxonomia.taxonomia_id}>
-                <td>{taxonomia.taxonomia_id}</td>
-                <td>{taxonomia.elnevezes}</td>
-                <td>
-                  <button 
-                    className="deleteBtn" 
-                    onClick={() => handleDelete(index)}
-                  >
-                    🗑️ Törlés
-                  </button>
-                </td>
-              </tr>
-            ))
-          ) : (
-            <tr>
-              <td colSpan="3">Nincsenek találatok</td>
-            </tr>
-          )}
+        {
+             filteredTaxonomias.map((elem, index) => {
+              return <TaxonomiaSorok elem={elem} key={index} index={index}/>
+             })
+          }
         </tbody>
       </table>
     </div>

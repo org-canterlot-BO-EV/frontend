@@ -18,6 +18,7 @@ function ProgramokSorok(props) {
                 <td>{props.elem.program_datum}</td>
                 <td>{props.elem.foglalas_kezdete}</td>
                 <td>{props.elem.foglalas_vege}</td>
+                <td>{props.elem.db}</td>
                 <td>
                   <button 
                     className="deleteBtn" 

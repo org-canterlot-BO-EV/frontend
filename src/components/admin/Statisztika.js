@@ -6,6 +6,7 @@ return(
    <h1>
     Statisztikák
     </h1>
+    <p>átlagosan hányan vesznek jegyet egy előadásra</p>
   </>
 )
 };

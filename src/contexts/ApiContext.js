@@ -7,6 +7,7 @@ export const ApiProvider = ({ children }) => {
   const [programTipusok, setProgramTipusok] = useState([]);
   const [felhasznalok, setFelhasznalok] = useState([]);
   const [programok, setProgramok] = useState([]);
+  const [taxonomiak, setTaxonomiak] =useState([]);
 
   const getAdat = async (vegpont, asyFgv) => {
     try {
@@ -31,11 +32,12 @@ export const ApiProvider = ({ children }) => {
     getAdat("api/programtipusok", setProgramTipusok);
     getAdat("api/felhasznalok", setFelhasznalok);
     getAdat("api/programok", setProgramok);
+    getAdat("api/mindentaxonomia", setTaxonomiak);
   }, []);
 
 
   return (
-    <ApiContext.Provider value={{ programTipusok, felhasznalok, programok }}>
+    <ApiContext.Provider value={{ programTipusok, felhasznalok, programok, taxonomiak }}>
       {children}
     </ApiContext.Provider>
   );
