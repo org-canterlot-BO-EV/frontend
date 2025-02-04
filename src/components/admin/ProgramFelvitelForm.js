@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import useApiContext from '../../contexts/ApiContext.js';
 import ProgramLegordulo from './ProgramLegordulo.js';
+import axios from 'axios';
+import { myAxios } from '../../api/MyAxios.js';
 
 const ProgramFelvitelForm = () => {
     const { programTipusok } = useApiContext();
@@ -22,9 +24,17 @@ const ProgramFelvitelForm = () => {
         }));
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log("form kitöltve ezekkel az adatokkal: ", formData);
+        try{
+            const response = await myAxios.post('/program-hozzaadasa', formData, {
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            });
+        } catch (err) {
+            console.log("Nem jó");
+        }
     }
 
     return(

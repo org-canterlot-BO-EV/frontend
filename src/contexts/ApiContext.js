@@ -5,6 +5,8 @@ export const ApiContext = createContext("");
 
 export const ApiProvider = ({ children }) => {
   const [programTipusok, setProgramTipusok] = useState([]);
+  const [felhasznalok, setFelhasznalok] = useState([]);
+  const [programok, setProgramok] = useState([]);
 
   const getAdat = async (vegpont, asyFgv) => {
     try {
@@ -15,15 +17,29 @@ export const ApiProvider = ({ children }) => {
     }
   };
 
+  const postAdat = async (vegpont, adat) => {
+    try{
+        const response = await myAxios.post(vegpont, adat, {
+          
+        });
+    } catch (err) {
+        console.log("Nem jó");
+    }
+  }
+
   useEffect(() => {
     getAdat("api/programtipusok", setProgramTipusok);
+    getAdat("api/felhasznalok", setFelhasznalok);
+    getAdat("api/programok", setProgramok);
   }, []);
 
+
   return (
-    <ApiContext.Provider value={{ programTipusok }}>
+    <ApiContext.Provider value={{ programTipusok, felhasznalok, programok }}>
       {children}
     </ApiContext.Provider>
   );
+
 };
 
 export default function useApiContext() {
