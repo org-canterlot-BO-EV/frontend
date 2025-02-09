@@ -1,0 +1,101 @@
+/* Közös stílusok */
+.adminMenu {
+  top: 0;
+  height: 97%;
+  width: 250px;
+  padding-top: 30px;
+  border-right: 3px solid;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.adminMenu h4 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  text-align: center;
+  transition: color 0.3s ease;
+}
+
+.adminMenu a {
+  display: block;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 10px 15px;
+  border-radius: 5px;
+  margin: 10px 0;
+  transition: all 0.3s ease;
+}
+
+.adminMenu a:hover {
+  transform: translateX(10px);
+}
+
+.adminMenu div {
+  padding: 0;
+  margin-left: 10px;
+  margin-bottom: 0;
+  transition: background-color 0.3s ease;
+}
+
+.adminMenu div:hover {
+  background-color: #f1f1f1;
+}
+
+.adminMenu div:hover a {
+  color: #333;
+}
+
+/* Világos mód */
+.light-mode .adminMenu {
+  background-color: #f9f9f9;
+  border-right-color: #e0e0e0;
+}
+
+.light-mode .adminMenu h4 {
+  color: #333;
+}
+
+.light-mode .adminMenu a {
+  color: #333;
+}
+
+.light-mode .adminMenu a:hover {
+  background-color: #F1C6D4;
+  color: white;
+}
+
+.light-mode .adminMenu div:hover {
+  background-color: #f1f1f1;
+}
+
+.light-mode .adminMenu div:hover a {
+  color: #333;
+}
+
+/* Sötét mód */
+.dark-mode .adminMenu {
+  background-color: #2d2d2d;
+  border-right-color: #1c1c1c;
+}
+
+.dark-mode .adminMenu h4 {
+  color: white;
+}
+
+.dark-mode .adminMenu a {
+  color: #dcdcdc;
+}
+
+.dark-mode .adminMenu a:hover {
+  background-color: #87414D;
+  color: white;
+}
+
+.dark-mode .adminMenu div:hover {
+  background-color: #3a3a3a;
+}
+
+.dark-mode .adminMenu div:hover a {
+  color: white;
+}

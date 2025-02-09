@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import TaxonomiaSorok from './TaxonomiaSorok';
 import useApiContext from '../../contexts/ApiContext';
 
@@ -11,7 +11,7 @@ const Taxonomia = () => {
   );
   
   return (
-    <div className="taxonomiaLista">
+    <div className="taxonomiaLista" >
       <h2>Taxonómia lista</h2>
       <input
         className='taxonomiaKereso'

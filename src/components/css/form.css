@@ -1,0 +1,270 @@
+/* Közös stílusok */
+.programFelvitel {
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 15px auto 0px auto;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .programFelvitel h2 {
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  
+  .programFelvitel form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .programFelvitel button {
+    padding: 15px;
+    border: none;
+    border-radius: 16px;
+    margin: 25px 0;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    max-width: 250px;
+    width: 100%;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+
+  .gombok {
+    display: inline;
+  }
+  
+  .programFelvitel label {
+    font-weight: bold;
+    display: block;
+    text-align: left;
+    margin-bottom: 10px;
+  }
+  
+  .felvitelSor {
+    margin: 20px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  
+  .felvitelSor input,
+  .felvitelSor textarea,
+  .felvitelSor select,
+  .programSzuro,
+  .valasztoSelect {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 18px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+  
+  .felvitelSor input:focus,
+  .felvitelSor textarea:focus,
+  .felvitelSor select:focus {
+    border-color: #87414D;
+    box-shadow: 0 0 8px rgba(135, 65, 77, 0.6);
+    outline: none;
+  }
+  
+  .felvitelSor input[type="date"] {
+    font-size: 18px;
+  }
+  
+  .felvitelSor textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+  
+  /* Reszponzív beállítások */
+  @media (max-width: 768px) {
+    .programFelvitel {
+      padding: 30px;
+      max-width: 90%;
+    }
+  
+    .felvitelSor {
+      flex-direction: column;
+    }
+  
+    .programFelvitel button {
+      max-width: 100%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .programFelvitel h2 {
+      font-size: 26px;
+    }
+  
+    .felvitelSor input,
+    .felvitelSor textarea,
+    .felvitelSor select {
+      font-size: 16px;
+    }
+  
+    .programFelvitel button {
+      font-size: 16px;
+    }
+  }
+  
+  /* Világos mód */
+  .light-mode .programFelvitel {
+    background-color: #FFECF6; 
+    color: #4A4A4A; 
+  }
+  
+  .light-mode .programFelvitel h2 {
+    color: #4A4A4A;
+  }
+  
+  .light-mode .programFelvitel button {
+    background-color: #87414D; 
+  }
+  
+  .light-mode .programFelvitel button:hover {
+    background-color: #6F2F38;
+    transform: scale(1.05);
+  }
+  
+  .light-mode .programFelvitel label {
+    color: #4A4A4A;
+  }
+  
+  .light-mode .felvitelSor input,
+  .light-mode .felvitelSor textarea,
+  .light-mode .felvitelSor select {
+    border-color: #ccc;
+  }
+  
+  .light-mode .felvitelSor input:focus,
+  .light-mode .felvitelSor textarea:focus,
+  .light-mode .felvitelSor select:focus {
+    border-color: #87414D;
+    box-shadow: 0 0 8px rgba(135, 65, 77, 0.6);
+  }
+  
+  /* Sötét mód */
+  .dark-mode .programFelvitel {
+    background-color: #2A2A2A;
+    color: #fff; 
+  }
+  
+  .dark-mode .programFelvitel h2 {
+    color: #F1C6D4;
+  }
+  
+  .dark-mode .programFelvitel button {
+    background-color: #F1C6D4;
+  }
+  
+  .dark-mode .programFelvitel button:hover {
+    background-color: #6F2F38;
+    transform: scale(1.05);
+  }
+  
+  .dark-mode .programFelvitel label {
+    color: #F1C6D4;
+  }
+  
+  .dark-mode .felvitelSor input,
+  .dark-mode .felvitelSor textarea,
+  .dark-mode .felvitelSor select {
+    border-color: #4A4A4A; 
+    background-color: #3C3C3C; 
+    color: #fff; 
+  }
+  
+  .dark-mode .felvitelSor input:focus,
+  .dark-mode .felvitelSor textarea:focus,
+  .dark-mode .felvitelSor select:focus {
+    border-color: #F1C6D4;
+    box-shadow: 0 0 8px rgba(241, 198, 212, 0.6);
+  }
+  
+/*form valaszto*/
+
+/* Alap stílusok */
+.valaszto {
+    text-align: center;
+    align-items: center;
+    margin: 10px;
+  }
+  
+  .valasztoSelect {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    width: 50%;
+    box-sizing: border-box;
+    font-size: 18px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+  
+  .valasztoSelect:focus {
+    border-color: #87414D;
+    box-shadow: 0 0 8px rgba(135, 65, 77, 0.6);
+    outline: none;
+  }
+  
+ 
+  @media (max-width: 768px) {
+    .valasztoSelect {
+      font-size: 12px;
+      padding: 6px 12px;
+    }
+  }
+  
+  /* Világos mód */
+  .light-mode .valaszto {
+    background-color: #F1C6D4;
+  }
+  
+  .light-mode .valasztoSelect {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 18px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+  
+  .light-mode .valasztoSelect:hover {
+    cursor: pointer;
+  }
+  
+  .light-mode .valasztoSelect:focus {
+    border-color: #87414D;
+    box-shadow: 0 0 8px rgba(135, 65, 77, 0.6);
+    outline: none;
+  }
+  
+  /* Sötét mód */  
+  .dark-mode .valasztoSelect {
+    border-color: #4A4A4A;
+    background-color: #3C3C3C;
+    color: #fff;
+  }
+  
+  .dark-mode .valasztoSelect:hover {
+    cursor: pointer;
+  }
+  
+  .dark-mode .valasztoSelect:focus {
+    border-color: #F1C6D4;
+    box-shadow: 0 0 8px rgba(241, 198, 212, 0.6);
+    outline: none;
+  }
+  
+  

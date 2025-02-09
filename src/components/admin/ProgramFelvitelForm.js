@@ -8,7 +8,6 @@ const ProgramFelvitelForm = () => {
     const { programTipusok } = useApiContext();
     const [formData, setFormData] = useState({
         program_cim: '',
-        program_tipus: '',
         program_leiras: '',
         program_helyszin: '',
         program_ideje: '',
@@ -26,16 +25,24 @@ const ProgramFelvitelForm = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        try{
-            const response = await myAxios.post('/program-hozzaadasa', formData, {
+    
+        try {
+            const response = await myAxios.post('http://localhost:8000/api/program-hozzadasa', formData, {
                 headers: {
                     'Content-Type': 'application/json',
                 },
             });
+    
+            console.log("Program sikeresen hozzáadva:", response.data);
         } catch (err) {
-            console.log("Nem jó");
+            if (err.response && err.response.status === 422) {
+                // Itt megjelenítheted a validációs hibákat
+                console.log("Validációs hibák:", err.response.data.errors);
+            } else {
+                console.log("Hiba történt a küldés során", err);
+            }
         }
-    }
+    };
 
     return(
         <div className="programFelvitel">

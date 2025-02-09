@@ -1,0 +1,195 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow-x: auto;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+button {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    margin: 5px;
+    transition: background-color 0.3s;
+}
+
+@media (max-width: 768px) {
+    table { font-size: 12px; }
+    th, td { padding: 8px; }
+    button { font-size: 12px; padding: 5px 10px; }
+}
+
+@media (max-width: 480px) {
+    table { font-size: 10px; }
+    th, td { padding: 6px; }
+    button { font-size: 10px; padding: 4px 8px; }
+}
+
+.light-mode table { background-color: #fff; }
+.light-mode th { background-color: #F1C6D4; color: #333; font-weight: bold; }
+.light-mode td { background-color: #fff; color: #333; }
+.light-mode tr:nth-child(even) td { background-color: #f9f9f9; }
+.light-mode tr:hover td { background-color: #F9D1D9; cursor: pointer; }
+.light-mode .editBtn, .dark-mode .editBtn { background-color: #F1C6D4; color: white; }
+.light-mode .editBtn:hover, .dark-mode .editBtn:hover { background-color: #E1A1B5; }
+.light-mode .deleteBtn, .dark-mode .deleteBtn { background-color: #F28B82; color: white; }
+.light-mode .deleteBtn:hover, .dark-mode .deleteBtn:hover { background-color: #F15D3A; }
+
+.dark-mode body { background-color: #181818; color: #f1f1f1; }
+.dark-mode table { background-color: #2a2a2a; }
+.dark-mode th { background-color: #333; color: #f1f1f1; font-weight: bold; }
+.dark-mode td { background-color: #444; color: #f1f1f1; }
+.dark-mode tr:nth-child(even) td { background-color: #555; }
+.dark-mode tr:hover td { background-color: #6a6a6a; cursor: pointer; }
+
+.felhasznalokLista, .taxonomiaLista, .programLista {
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .felhasznalokLista, .taxonomiaLista, .programLista { padding: 15px; }
+}
+
+@media (max-width: 480px) {
+    .felhasznalokLista, .taxonomiaLista, .programLista { padding: 10px; }
+}
+
+.light-mode .felhasznalokLista, .light-mode .taxonomiaLista, .light-mode .programLista {
+    background-color: #FFECF6;
+    color: #4A4A4A;
+}
+
+.dark-mode .felhasznalokLista, .dark-mode .taxonomiaLista, .dark-mode .programLista {
+    background-color: #2A2A2A;
+    color: #fff;
+}
+
+.taxonomiaLista, .felhasznalokLista {
+    text-align: center;
+    align-items: center;
+}
+
+.taxonomiaKereso, .felhasznaloKereso {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    width: 50%;
+    font-size: 18px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.taxonomiaKereso:focus, .felhasznaloKereso:focus {
+    border-color: #F1C6D4; /* Világos rózsaszín fókusz szín */
+    box-shadow: 0 0 8px rgba(241, 198, 212, 0.6);
+    outline: none;
+}
+
+@media (max-width: 768px) {
+    .taxonomiaKereso, .felhasznaloKereso { font-size: 12px; padding: 6px 12px; }
+}
+
+.light-mode .taxonomiaKereso, .light-mode .felhasznaloKereso {
+    width: 100%;
+}
+
+.light-mode .taxonomiaKereso:hover, .light-mode .felhasznaloKereso:hover { cursor: pointer; }
+
+.dark-mode .taxonomiaKereso, .dark-mode .felhasznaloKereso {
+    border-color: #4A4A4A;
+    background-color: #3C3C3C;
+    color: #fff;
+}
+
+.dark-mode .taxonomiaKereso:hover, .dark-mode .felhasznaloKereso:hover { cursor: pointer; }
+
+.programLista h2{
+    text-align: center;
+}
+
+.programLista {
+    text-align: center;
+    align-items: center;
+  }
+  
+  .programSzuro {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    width: 50%;
+    box-sizing: border-box;
+    font-size: 18px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+  
+  .programSzuro:focus {
+    border-color: #87414D;
+    box-shadow: 0 0 8px rgba(135, 65, 77, 0.6);
+    outline: none;
+  }
+  
+  /* Reszponzív beállítások */
+  @media (max-width: 768px) {
+    .programSzuro {
+      font-size: 12px;
+      padding: 6px 12px;
+    }
+  }
+  
+  /* Világos mód */
+  .light-mode .programLista {
+    background-color: #F1C6D4;
+  }
+  
+  .light-mode .programSzuro {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 18px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+  
+  .light-mode .programSzuro:hover {
+    cursor: pointer;
+  }
+  
+  .light-mode .programSzuro:focus {
+    border-color: #87414D;
+    box-shadow: 0 0 8px rgba(135, 65, 77, 0.6);
+    outline: none;
+  }
+  
+  /* Sötét mód */  
+  .dark-mode .programSzuro {
+    border-color: #4A4A4A;
+    background-color: #3C3C3C;
+    color: #fff;
+  }
+  
+  .dark-mode .programSzuro:hover {
+    cursor: pointer;
+  }
+  
+  .dark-mode .programSzuro:focus {
+    border-color: #F1C6D4;
+    box-shadow: 0 0 8px rgba(241, 198, 212, 0.6);
+    outline: none;
+  }
