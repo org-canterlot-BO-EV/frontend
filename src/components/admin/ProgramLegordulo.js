@@ -1,9 +1,10 @@
-import React from 'react'
-
-function ProgramLegordulo(props) {
+const ProgramLegordulo = ({ programtipus_id, elnevezes }) => {
   return (
-    <option key={props.programtipus_id } value={props.elnevezes}>{props.elnevezes}</option>
-  )
+      <option value={programtipus_id}>
+          {elnevezes}
+      </option>
+  );
 }
 
-export default ProgramLegordulo
+export default ProgramLegordulo;
+
