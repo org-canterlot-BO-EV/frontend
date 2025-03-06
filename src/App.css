@@ -3,25 +3,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Varta:wght@300..700&display=swap');
 
 /*NAVIGÁCIÓ*/
+
 .App {
   text-align: center;
 }
 
 .navigacio{
+  position: fixed;
+  top: 0;
+  width: 100%;
   height: 75px;
   background-color: #87414D;
   color: #FDDAF0;
   display: flex;
+  line-height: 75px;
+  padding: 0 10px;
 }
 
 .nav_menu{
   position: fixed;
   right: 0;
-  width: 60%;
+  height: 75px;
 }
 
 .navigacio img{
   width: 50px;
+  height: 50px;
   margin: 10px 0px;
   border-radius: 100%;
 }
@@ -30,7 +37,12 @@
 .navigacio h1{
   display: inline;
   font-size: 32px;
-  margin: 10px 15px;
+  margin: 0 15px;
+}
+
+.navigacio a{
+  text-decoration: none;
+  color:#FDDAF0;
 }
 
 .nav_legordulo h2{
@@ -45,15 +57,19 @@
   border-left: 1px solid #FDDAF0;
 }
 
-/*BEJELENTKEZÉS*/
+/*BEJELENTKEZÉS, REGISZTRÁCIÓ*/
 
 
 .bejelentkezes{
   width: 470px;
-  height: 500px;
   margin: auto;
   color: #1A261A;
   font-family: 'Varta', sans-serif;
+  margin-top: 75px;
+}
+
+.bejelentkezes h1{
+  text-align: center;
 }
 
 .bejelentkezes button{
@@ -83,14 +99,39 @@
 
 .bejelentkezes input:focus{ border: 0px; }
 
+.bejelentkezes form div{
+  text-align: center;
+  margin: 20px;
+}
+
+.bejelentkezes form div p{
+  margin: 0;
+}
+
+.regisztracioLink a{
+  text-decoration: none;
+  color: #87414D;
+}
+
+#root{
+  height: 100vh;
+  margin: 0;
+}
+
 /*Borsószemhercegkisasszony territóriuma*/
+
+.adminTarolo{
+  height: 100vh;
+  margin: 0;
+}
 
 .adminFelulet {
   display: grid;
   grid-template-columns: 1fr 10fr 1fr;
+  padding-top: 75px;
   width: 100%;
   margin: 0 auto;
-  height: 1500px;
+  min-height: 100%;
 }
 
 .light-mode .adminFelulet {

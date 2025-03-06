@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import useAuthContext from "../contexts/AuthContext";
 
-
 export default function Bejelentkezes() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -41,11 +40,7 @@ export default function Bejelentkezes() {
             name="email"
           />
         </div>
-        <div>
-          {errors.email && (
-            <span>{errors.email[0]}</span>
-          )}
-        </div>
+        <div>{errors.email && <span>{errors.email[0]}</span>}</div>
         <div>
           <label htmlFor="pwd">
             <p>Jelszó</p>
@@ -61,22 +56,14 @@ export default function Bejelentkezes() {
             placeholder="jelszó"
             name="pwd"
           />
-          <div>
-            {errors.jelszo && (
-              <span>{errors.password[0]}</span>
-            )}
-          </div>
+          <div>{errors.jelszo && <span>{errors.password[0]}</span>}</div>
         </div>
 
         <div>
-          <button type="submit">
-            Bejelentkezés
-          </button>
+          <button type="submit">Bejelentkezés</button>
 
-          <p>
-            <Link to="/regisztracio">
-              Regisztráció
-            </Link>
+          <p className="regisztracioLink">
+            <Link to="/regisztracio">Regisztráció</Link>
           </p>
         </div>
       </form>
