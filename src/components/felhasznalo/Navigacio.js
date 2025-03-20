@@ -8,7 +8,7 @@ function Navigacio() {
 
   return (
     <div className="navigacio">
-        <img src="https://chromestylehungary.com/img/96684/tex_lil/tex_lil.jpg" alt="logo" />
+        <img src="./kepek/logo.png" alt="logo" />
         <h1><Link to="/">Canterlot</Link></h1>
       <div className="nav_menu">
         <h1><a href="">Hírek</a></h1>

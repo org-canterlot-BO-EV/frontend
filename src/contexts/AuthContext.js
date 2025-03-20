@@ -8,10 +8,14 @@ export const AuthProvider = ({ children }) => {
   const navigate = useNavigate();
   const [user, setUser] = useState(null);
   const [errors, setErrors] = useState({
-    name: "",
+    felhasznalo_nev: "",
     email: "",
     password: "",
-    password_confirmation: "",
+    jelszo_ujra: "",
+    vezetek_nev: "",
+    kereszt_nev: "",
+    szul_datum: "",
+    telefon: "",
   });
   const csrf = () => myAxios.get("/sanctum/csrf-cookie");
 

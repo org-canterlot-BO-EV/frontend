@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 export default function Regisztracio() {
   const [felhasznalo_nev, setFelhasznaloNev] = useState("");
   const [email, setEmail] = useState("");
-  const [jelszo, setJelszo] = useState("");
+  const [password, setPassword] = useState("");
   const [jelszo_ujra, setJelszoUjra] = useState("");
   const [vezetek_nev, setVezetekNev] = useState("");
   const [kereszt_nev, setKeresztNev] = useState("");
@@ -26,7 +26,7 @@ export default function Regisztracio() {
     const adat = {
       felhasznalo_nev: felhasznalo_nev,
       email: email,
-      jelszo: jelszo,
+      password: password,
       jelszo_ujra: jelszo_ujra,
       vezetek_nev: vezetek_nev,
       kereszt_nev: kereszt_nev,
@@ -81,15 +81,15 @@ export default function Regisztracio() {
           </label>
           <input
             type="password"
-            value={jelszo}
+            value={password}
             onChange={(e) => {
-              setJelszo(e.target.value);
+              setPassword(e.target.value);
             }}
             id="pwd"
             placeholder="jelszó"
             name="pwd"
           />
-          <div>{errors.jelszo && <span>{errors.jelszo[0]}</span>}</div>
+          <div>{errors.password && <span>{errors.password[0]}</span>}</div>
         </div>
         <div>
           <label htmlFor="pwd2">
